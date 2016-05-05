@@ -15,10 +15,8 @@ Call me at (503) 608-4416 or [Email me](mailto:howie@codingcoop.org) :)
 <script src="/jquery-1.12.3.min.js" type="text/javascript"></script>
 <script src="/md.js" type="text/javascript"></script>
 <script>
-  $.get('', function(data) {
-    console.log(data)
+  $.get('https://raw.githubusercontent.com/howardroark/500/gh-pages/README.md', function(data) {
+    var md = new Remarkable()
+    document.getElementsByClassName('markdown-body')[0].innerHTML = md.render(data)
   })
-  var md = new Remarkable()
-  var content = document.getElementsByClassName('markdown-body')[0].textContent;
-  document.getElementsByClassName('markdown-body')[0].innerHTML = md.render(content);
 </script>
